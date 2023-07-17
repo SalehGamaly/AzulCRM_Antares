@@ -1,4 +1,4 @@
-package com.antares.runner;
+package com.AzulCRM.runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

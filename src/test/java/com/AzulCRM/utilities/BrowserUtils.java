@@ -1,4 +1,4 @@
-package com.antares.utilities;
+package com.AzulCRM.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
