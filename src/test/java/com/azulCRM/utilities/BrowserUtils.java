@@ -17,7 +17,6 @@ public class BrowserUtils {
     /*
 This class is for storing utility methods that can be used across project
  */
-
     public static void sleep(int seconds){
 
         seconds *= 1000;

@@ -18,7 +18,6 @@ public class Driver {
      */
 
     /*
-
     Create a reusable utility method that returns same driver instance once we call it
     - if an instance doesn't exist (driver == null), it will create an instance first,
     then will always return it when called
