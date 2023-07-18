@@ -86,6 +86,7 @@ public abstract class BasePage {
             BrowserUtils.clickWithWait(By.xpath(tabLocator), 5);
         }
         try {
+
             BrowserUtils.waitForPresenceOfElement(By.xpath(moduleLocator), 5);
             BrowserUtils.waitForVisibility(By.xpath(moduleLocator), 5);
             BrowserUtils.scrollToElement(Driver.getDriver().findElement(By.xpath(moduleLocator)));
