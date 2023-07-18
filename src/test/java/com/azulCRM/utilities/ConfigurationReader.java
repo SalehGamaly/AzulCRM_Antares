@@ -1,4 +1,4 @@
-package com.AzulCRM.utilities;
+package com.azulCRM.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
