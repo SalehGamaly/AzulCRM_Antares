@@ -28,6 +28,7 @@ public class AzulCRMLogin_StepDefinitions {
     public void user_enters_hr_information() {
         loginPage.login(ConfigurationReader.getProperty("hr_username"), ConfigurationReader.getProperty("hr_password"));
 
+
     }
     @When("user enters Marketing information")
     public void user_enters_marketing_information() {

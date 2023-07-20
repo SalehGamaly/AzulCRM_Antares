@@ -37,6 +37,7 @@ Feature: AzulCRM login feature
     When the user locates the Remember Me link
     Then the user should be able to click on button before login
 
+
   @passwordBullet
   Scenario: Password to the login page should be in bullet signs
       When user enters password information
