@@ -31,3 +31,15 @@ Feature: AzulCRM login feature
       | username                  | password |
       | hr11@cybertekschool.com   | Useruser |
       | hr1005@cybertekschool.com | UserUser |
+
+  @rememberMeLink
+  Scenario: Remember me link can be clicked
+    When the user locates the Remember Me link
+    Then the user should be able to click on button before login
+
+  @passwordBullet
+  Scenario: Password to the login page should be in bullet signs
+      When user enters password information
+      Then user should see the password in bullets signs
+
+
