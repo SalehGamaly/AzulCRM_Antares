@@ -2,6 +2,7 @@ package com.azulCRM.pages;
 
 
 
+import com.azulCRM.utilities.ConfigurationReader;
 import com.azulCRM.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,13 +17,19 @@ public class LoginPage {
     @FindBy(name="USER_LOGIN")
     public WebElement login;
 
-
-
     @FindBy(name="USER_PASSWORD")
     public WebElement password;
 
     @FindBy(className = "login-btn")
     public WebElement loginButton;
+
+    @FindBy(className = "errortext")
+    public WebElement invalidCredentialsErrorMessage;
+
+    @FindBy(className = "login-item-checkbox-label")
+    public WebElement rememberMeCheckButton;
+
+
 
 
     public void login(String userNameStr, String passwordStr) {
