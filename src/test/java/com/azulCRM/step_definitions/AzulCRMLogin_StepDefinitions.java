@@ -64,6 +64,15 @@ public class AzulCRMLogin_StepDefinitions {
         Assert.assertEquals("Error message verification failed!",expectedErrorText,actualErrorText);
     }
 
+    @Then("User sees “Please fill out the field” error message")
+    public void user_sees_please_fill_out_the_field_error_message() {
+        String expectedErrorText = "Please fill out this field";
+
+        String actualErrorText = loginPage.invalidCredentialsErrorMessage.getText();
+
+        Assert.assertEquals("Error message verification failed!",expectedErrorText,actualErrorText);
+    }
+
     @When("the user locates the Remember Me link")
     public void the_user_locates_the_remember_me_link() {
         String expectedLabelText = "Remember me on this computer";
@@ -75,7 +84,7 @@ public class AzulCRMLogin_StepDefinitions {
     public void the_user_should_be_able_to_click_on_button_before_login() {
         loginPage.rememberMeCheckButton.isSelected();
         loginPage.rememberMeCheckButton.click();
-        loginPage.rememberMeCheckButton.isEnabled();
+        Assert.assertTrue(loginPage.rememberMeCheckButton.isEnabled());
 
     }
 

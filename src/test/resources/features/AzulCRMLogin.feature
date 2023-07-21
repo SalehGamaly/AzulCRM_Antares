@@ -1,3 +1,4 @@
+@wip
 Feature: AzulCRM login feature
 
   User Story:
@@ -9,28 +10,38 @@ Feature: AzulCRM login feature
     Given user is on the login page of the CRM application
 
   @HR @smoke
-  Scenario: Login as HR
+  Scenario: Positive Login as HR
     When user enters HR information
     Then user should land on homepage
 
   @smoke
-  Scenario: Login as Marketing
+  Scenario: Positive Login as Marketing
     When user enters Marketing information
     Then user should land on homepage
 
   @HelpDesk @smoke
-  Scenario: Login as Helpdesk
+  Scenario: Positive Login as Helpdesk
     When user enters Helpdesk information
     Then user should land on homepage
 
   @invalidLogin
-  Scenario Outline: Login with invalid credential
+  Scenario Outline: Negative Login with invalid credential
     When the user login with below "<username>", "<password>"
     Then the user should not be able to log in
     Examples:
       | username                  | password |
       | hr11@cybertekschool.com   | Useruser |
       | hr1005@cybertekschool.com | UserUser |
+
+  @ignore
+    Scenario Outline: Error message should be displayed
+      When the user login with below "<username>", "<password>"
+      Then User sees “Please fill out the field” error message
+    Examples:
+      | username                | password |
+      | hr11@cybertekschool.com |          |
+      |                         | UserUser |
+
 
   @rememberMeLink
   Scenario: Remember me link can be clicked
