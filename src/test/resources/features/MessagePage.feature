@@ -1,26 +1,33 @@
-Feature: User should be able to upload files and pictures
+Feature: User should be able to upload files and pictures as a message
   User story: As a user, I should be able to upload files and pictures as messages
 
-  Background:
-    Given The user is on "Home" page
-
-
+  @test1
   Scenario: Upload files and pictures in following formats: .pdf, .txt, .jpeg, .png, .docx
-    Then user sees "Upload files and messages" box
-    Then user uploads the files as messages
+    Given user logged in as "HelpDesk"
+    When user is on the Home page
+    And user clicks on the Message tab
+    And user clicks Upload files and images box
+    Then user uploads the files as messages in following formats:pdf, txt, jpeg, png, docx
 
 
+  @test2
   Scenario: Inserting the files and images into the text
-    Then user uploads the file
-    Then user sees "Insert in text" option
-    And user clicks "Insert in text" button
-    Then user sees file in text.
+    Given user logged in as "HelpDesk"
+    When user is on the Home page
+    And user clicks on the Message tab
+    And user clicks Upload files and images box
+    And user uploads the files as messages
+    And user clicks Insert in text button
+    Then Message box contains the file.
 
-
+  @test3
   Scenario: Removing files and images at any time before sending.
-    Then user uploads the file
-    And user sees the "Remove" button after uploading
-    And user clicks the "Remove" button
+    Given user logged in as "HelpDesk"
+    When user is on the Home page
+    And user clicks on the Message tab
+    And user clicks Upload files and images box
+    And user uploads the files as messages in
+    And user clicks the Remove button
     Then user can see the files being removed
 
 
