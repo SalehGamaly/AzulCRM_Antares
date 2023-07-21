@@ -11,14 +11,14 @@ public class MessagePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (xpath = "//span[.='Message']")
+    @FindBy (xpath = "//span[@id='feed-add-post-form-tab-message']/span")
     public WebElement messageBtn;
 
     @FindBy (xpath = "//span[@id = 'bx-b-uploadfile-blogPostForm']")
     public WebElement attachBtn;
 
 
-    @FindBy (xpath = "//input[@name= 'bxu_files[]']")
+    @FindBy (xpath = "//input[@name='bxu_files[]']")
     public WebElement uploadFilesBox;
 
 
@@ -26,15 +26,18 @@ public class MessagePage {
     public WebElement loadingBar;
 
 
-    @FindBy(xpath = "//span[@class='del-but']")
+    @FindBy(xpath = "//span[@bx-bound='Y']")
     public WebElement deleteBtn;
 
-    @FindBy(xpath = "//span[@id='check-in-text-n2881']")
+    @FindBy(xpath = "//span[@class='insert-btn']")
     public WebElement insertInText;
 
 
     @FindBy(xpath = "//body[@contenteditable='true']")
     public WebElement messageBody;
+
+    @FindBy(xpath = "(//div[@class = 'diskuf-files-block'])[1]")
+    public WebElement attachedFiles;
 
 
 
