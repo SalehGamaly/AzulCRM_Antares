@@ -35,11 +35,6 @@ public class SendMessageStepDefs {
     }
 
 
-    @And("user clicks on the Message tab")
-    public void user_clicks_on_the_message_tab() {
-        messagePage.messageTab.click();
-
-    }
     @And("user fills in the message content and recipient fields")
     public void user_fills_in_the_message_content_and_recipient_fields() {
 
@@ -157,4 +152,10 @@ public class SendMessageStepDefs {
     }
 
 
+    @And("user clicks on the {string} tab")
+    public void userClicksOnTheTab(String tab) {
+
+        Driver.getDriver().findElement(By.xpath("//span[.='"+tab+"']")).click();
+
+    }
 }

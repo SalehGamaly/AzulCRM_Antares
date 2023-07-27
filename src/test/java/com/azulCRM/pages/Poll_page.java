@@ -61,6 +61,8 @@ public class Poll_page {
     @FindBy(className = "feed-add-info-text")
     public WebElement noQuestionErreur;
 
+    @FindBy(className = "feed-add-info-text")
+    public WebElement errorMessage;
 
 
 

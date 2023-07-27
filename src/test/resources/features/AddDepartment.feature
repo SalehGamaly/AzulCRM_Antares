@@ -25,3 +25,24 @@ Feature: Add Department
     And user enters Marketing password
     Then user clicks employee menu
     Then user Marketing verify there is no ADD DEPARTMENT option
+
+
+  Scenario: Hr user should be able to add a department from the company structure.
+    When user logged in as "Hr"
+    #And user clicks on "Employees" menu
+    #Then user sees "Add department" option
+    #When user clicks "Add department"
+    #And user input "AzulCRM" department name
+    #And user selects " .  . Quality Assurance and Test Department" as parent department
+    #And user clicks "Add" button
+    #Then user adds a department
+
+
+  Scenario Outline: There is no “ADD DEPARTMENT” option for <userType>
+    Given user logged in as "<userType>"
+    #And user clicks on "Employees" menu
+    #Then user does not see "Add Department" option
+    Examples:
+      | userType  |
+      | helpdesk |
+      | marketing |
