@@ -18,6 +18,20 @@ import java.util.Map;
 public class AzulCRMLogin_StepDefinitions {
 
     LoginPage loginPage = new LoginPage();
+    @Then("User sees {string} error message")
+    public void userSeesErrorMessage(String expectedErrorText) {
+        String actualErrorText = loginPage.invalidCredentialsErrorMessage.getText();
+        Assert.assertEquals("Error message verification failed!",expectedErrorText,actualErrorText);
+    }
+
+    @Then("User sees “Please fill out the field” error message")
+    public void user_sees_please_fill_out_the_field_error_message() {
+        String expectedErrorText = "Please fill out this field";
+
+        String actualErrorText = loginPage.invalidCredentialsErrorMessage.getText();
+
+        Assert.assertEquals("Error message verification failed!",expectedErrorText,actualErrorText);
+    }
 
     @Given("user is on the login page of the CRM application")
     public void user_is_on_the_login_page_of_the_crm_application() {
@@ -64,14 +78,6 @@ public class AzulCRMLogin_StepDefinitions {
         Assert.assertEquals("Error message verification failed!",expectedErrorText,actualErrorText);
     }
 
-    @Then("User sees “Please fill out the field” error message")
-    public void user_sees_please_fill_out_the_field_error_message() {
-        String expectedErrorText = "Please fill out this field";
-
-        String actualErrorText = loginPage.invalidCredentialsErrorMessage.getText();
-
-        Assert.assertEquals("Error message verification failed!",expectedErrorText,actualErrorText);
-    }
 
     @When("the user locates the Remember Me link")
     public void the_user_locates_the_remember_me_link() {

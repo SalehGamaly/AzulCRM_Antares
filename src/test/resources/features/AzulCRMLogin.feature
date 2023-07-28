@@ -24,10 +24,21 @@ Feature: AzulCRM login feature
     When user enters Helpdesk information
     Then user should land on homepage
 
+   #instead of creating 3 different scenarios, better to create 1 scenario outline
+   #better to use present simple tense than should
+  Scenario Outline: Login as a <userType>
+    Given user logged in as "<userType>"
+    #Then user lands on homepage
+    Examples:
+      | userType  |
+      | hr       |
+      | helpdesk |
+      | marketing |
+
   @invalidLogin
   Scenario Outline: Negative Login with invalid credential
     When the user login with below "<username>", "<password>"
-    Then the user should not be able to log in
+    Then User sees "Incorrect login or password" error message
     Examples:
       | username                  | password |
       | hr11@cybertekschool.com   | Useruser |
@@ -36,7 +47,7 @@ Feature: AzulCRM login feature
   @ignore
     Scenario Outline: Error message should be displayed
       When the user login with below "<username>", "<password>"
-      Then User sees “Please fill out the field” error message
+      Then User sees "Please fill out the field" error message
     Examples:
       | username                | password |
       | hr11@cybertekschool.com |          |

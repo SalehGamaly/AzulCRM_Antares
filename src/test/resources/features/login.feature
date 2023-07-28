@@ -11,3 +11,15 @@ Feature: Users should be able to login
       | hr11@cybertekschool.com        | UserUser |
       | helpdesk11@cybertekschool.com  | UserUser |
       | marketing11@cybertekschool.com | UserUser |
+
+
+  Scenario Outline: Verify login with different user types
+    Given user logged in as "<userType>"
+
+    Examples:
+      | userType  |
+      | hr       |
+      | helpdesk |
+      | marketing |
+
+

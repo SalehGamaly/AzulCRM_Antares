@@ -130,4 +130,11 @@ public class Poll_StepDefs {
 
         Assert.assertEquals(expectedTitleNoAnswer, actualTitleNoAnswer);
     }
+
+    @Then("{string} error message is displayed")
+    public void errorMessageIsDisplayed(String expectedErrorMessage) {
+        String actualTitleNoAnswer = pollPage.errorMessage.getText();
+        Assert.assertEquals(expectedErrorMessage, actualTitleNoAnswer);
+
+    }
 }
